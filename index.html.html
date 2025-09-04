@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Messanger Pitch Deck</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/styles.css" />
+  <link rel="icon" type="image/png" href="./static/images/qm_logo.png"/>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-color:  #EF4036;
+      --secondary-color:  #1e9e69;
+      --bg-color: #f8faff;
+      --text-color: #333;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 100%;
+      background: var(--primary-color);
+      color: #fff;
+      padding: 20px;
+    }
+    nav h2 {
+      text-align: left;
+      margin-bottom: 30px;
+      font-size: 1.2rem;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 20px 0;
+      text-align: left;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      display: block;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: var(--secondary-color);
+    }
+    .content {
+      margin-left: 240px;
+      padding: 40px;
+      transition: all 0.4s ease;
+      width:90%;
+      max-width: 1240px;
+      margin:0 auto;
+    }
+    .slide {
+      display: none !important;
+      min-height: 100vh;
+      max-height: 60vh !important;
+      width:90%;
+      padding: 60px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: #fff;
+      animation: fadeIn 0.6s ease;
+    }
+    .slide.active { display: block !important; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Slide templates */
+    .slide-1 {
+      text-align: center;
+    }
+    .slide-1 h1 { font-size: 2.5rem; margin-bottom: 15px; }
+    .slide-1 p { font-size: 1.2rem; }
+
+    .slide-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+    .slide-2 img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .slide-2 h2 { font-size: 2rem; }
+
+    .slide-3 {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+    .slide-3 .card {
+      background: #f9fafb;
+      padding: 20px;
+      border-radius: 12px;
+      width: 30%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .slide-3 i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+    }
+    .gen-flex{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap:4px;
+    }
+    .gen-flex-col{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap:4px
+    }
+  </style>
+
+</head>
+<body class="gen-flex" >
+  <nav style="">
+    <h2> Quick Messanger</h2>
+    <ul>
+      <li><a href="#" onclick="showSlide(1)"><i class="fa-solid fa-house"></i> Intro</a></li>
+      <li><a href="#" onclick="showSlide(2)"><i class="fa-solid fa-people-group"></i> Future Team</a></li>
+      <li><a href="problem_statement.html" ><i class="fa-solid fa-triangle-exclamation"></i> Problem Statement</a></li>
+      <!-- <li><a href="#" onclick="showSlide(4)"><i class="fa-solid fa-triangle-exclamation"></i> Problem Statement 2</a></li> -->
+      <li><a href="solution.html" onclick="showSlide(5)"><i class="fa-solid fa-lightbulb"></i> Solution</a></li>
+      <li><a href="https://quickmessanger.com" ><i class="fa-solid fa-lightbulb"></i> The Product</a></li>
+      <li><a href="target_audience.html" ><i class="fa-solid fa-users-viewfinder"></i> Target Audience</a></li>
+      <li><a href="https://quickmessanger.com/pricing" ><i class="fa-solid fa-lightbulb"></i> Pricing</a></li>
+      <li><a href="#" onclick="showSlide(7)"><i class="fa-solid fa-rectangle-ad"></i> Smart Adverts</a></li>
+      <li><a href="growth_stages.html" ><i class="fa-solid fa-timeline"></i>Timeline</a></li>
+      <li><a href="income_projects.html" onclick="showSlide(8)"><i class="fa-solid fa-timeline"></i>User & Income Projections</a></li>
+    </ul>
+  </nav>
+  <!-- <div style="width: 220px;height: 100vh;" class=""></div> -->
+  <div class="content gen-flex-col">
+    <!-- Slide 1 -->
+    <div class="slide slide-1 active gen-flex-col" id="slide-1">
+      <img src="./static/images/qm_logo.png" alt="Logo" style="border-radius: 50%; margin-bottom: 20px;">
+      <h1 style="text-align: center;">Welcome to Quick Messanger Platform</h1>
+      
+      <p>A Seamless Business Communication and Networking Plartform</p><br>
+      <h2>We bridge communication barriers that delays business deals</h2>
+    </div>
+
+    <!-- Slide 2 -->
+    <div style="justify-content: flex-start;" class="slide slide-2 gen-flex-col" id="slide-2">
+      <h1 style="margin-top: -10px;"><i class="fa-solid fa-people-group"></i> Support Network & Near Future Team</h1>
+      
+        <div class="hierarchy-img">
+          <img src="./static/images/hierarchy-img.png" alt="Hierarchy" style="width: 100%; border-radius: 10px;">
+        </div>
+    </div>
+
+    <div class="slide slide-3 gen-flex-col" id="slide-3">
+      <h1> <i class="fa-solid fa-triangle-exclamation"></i> Problem Statement</h1>
+      <div class="gen-flex" style="gap:40px;">
+        <div class="images-problem-stat">
+          <img src="./static/images/hierarchy-02.png" alt="Problem" style="width:100%; border-radius: 10px;">
+          <p><strong>Many businesses does not have websites, they lack online presence.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide slide-4" id="slide-4">
+      <h1> <i class="fa-solid fa-triangle-exclamation"></i> Problem Statement</h1>
+      <div class="gen-flex" style="gap:40px;">
+          <div class="gen-flex" style="gap:40px;width:60%;">
+            <div class="images-problem-stat">
+              <img src="./static/images/need.png" alt="Problem" style="width:100%; border-radius: 10px;">
+              <p><strong>We need a modern platform that showcases business profiles and makes them visible in the digital age. NKWE!</strong></p>
+            </div>
+          </div>
+          <div class="gen-flex-col dynamic-links" style="width:40%;align-items: flex-start;">
+              <div class="card">
+                <h3><i class="fa-solid fa-phone"></i> Instant Calls</h3>
+                <p>Tap to call directly from the directory.</p>
+              </div>
+              <div class="card">
+                <h3><i class="fa-solid fa-globe"></i> Dynamic Links</h3>
+                <p>Connect instantly to websites & social media.</p>
+              </div>
+              <div class="card">
+                <h3> <i class="fa-solid fa-bullhorn"></i> Smart Ads</h3>
+                <p>Businesses promote directly to their audience.</p>
+              </div>
+              <h3 style="color:#333">Modern media or web applications empowers users to manage (CRUD) their content</h3>
+          </div>
+      </div>
+    </div>
+
+    <div class="slide slide-5 gen-flex-col" id="slide-5">
+      <h1><i class="fa-solid fa-lightbulb"></i> Solution - Quick Messanger</h1>
+      <h3 style="color:#EF4036">“Quick Messenger is the modern business directory—transforming how companies present themselves in the digital age with dynamic profiles, links, and call-to-action tools.”</h3>
+      <div class="gen-flex" style="gap:40px;">
+        <div class="images-problem-stat">
+          <img src="./static/images/companies.jpg" alt="Problem" style="width:100%; border-radius: 10px;">
+           <h3 color="color:turquise">Easy to Install WPA: <i class="fa-brands fa-android"></i> <i class="fa-brands fa-apple"></i> <i class="fa-brands fa-windows"></i></h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide slide-6" id="slide-6">
+      <h1><i class="fa-solid fa-lightbulb"></i> Solution - Smart Directory</h1>
+      <div class="gen-flex" style="gap:40px;">
+          <div class="gen-flex-col dynamic-links" style="width:40%;align-items: flex-start;">
+              <div class="card">
+                <h3> <i class="fa-solid fa-phone"></i> Instant Calls</h3>
+                <p>Tap to call directly from the directory.</p>
+              </div>
+              <div class="card">
+                <h3> <i class="fa-solid fa-globe"></i> Dynamic Links</h3>
+                <p>Connect instantly to websites & social media.</p>
+              </div>
+              <div class="card">
+                <h3> <i class="fa-solid fa-bullhorn"></i> Smart Ads</h3>
+                <p>Businesses promote directly to their audience.</p>
+              </div>
+          </div>
+          <div class="gen-flex" style="gap:40px;width:60%;">
+            <div class="images-problem-stat">
+              <img src="./static/images/profile.JPG" alt="Problem" style="width:100%; border-radius: 10px;">
+              <h3 color="color:turquise">Easy to Install WPA: <i class="fa-brands fa-android"></i> <i class="fa-brands fa-apple"></i> <i class="fa-brands fa-windows"></i></h3>
+        </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="slide slide-7" id="slide-7">
+      <h1><i class="fa-solid fa-rectangle-ad"></i> Smart Adverts & Digital Marketing Tools</h1>
+      <div class="gen-flex-col" style="gap:40px;">
+        <div class="images-problem-stat gen-flex" style="margin: 5px auto;">
+          <img src="./static/images/smart-01-01.jpg" alt="Problem" style="width:60%; border-radius: 10px;">
+        </div>
+        <div class="gen-flex" style="gap:20px;">
+            <img src="./static/images/1315456.jpg" alt="User Growth" style="width:20%; border-radius: 10px;">
+            <img src="./static/images/2312154.jpg" alt="Revenue Projection" style="width:35%; border-radius: 10px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+  <div class="slide slide-8" id="slide-8">
+      <h1 style="color:#333"> <i class="fa-solid fa-timeline"></i> Timeline</h1>
+      <div class="wrap">
+          </div>
+          <!-- <div class="node"><div class="icon">🛠️</div></div> -->
+          </article>
+
+
+          <!-- Payments Integration -->
+          <article class="item">
+            <div class="card">
+              <h3>Payment system implementation</h3>
+              <div class="meta">
+              <span class="badge pill-warn">In Progress</span>
+              <span class="eta">Target: by Sep 30, 2025</span>
+              </div>
+              <p class="desc">Integrating payments to enable plan upgrades and transactions on-platform.</p>
+              <div class="numb">1</div>
+            </div>
+            <!-- <div class="node"><div class="icon">💳</div></div> -->
+            
+          </article>
+
+
+          <!-- Regulatory: Form C -->
+          <article class="item">
+            <div class="card">
+              <h3>Form C – Ministry of Commerce</h3>
+              <div class="meta">
+              <span class="badge pill-warn">This Week</span>
+              <span class="eta">Week of Aug 25–31, 2025</span>
+              </div>
+              <p class="desc">Filed via business consulting partner to formalize registration.</p>
+              <div class="numb">2</div>
+            </div>
+            <!-- <div class="node"><div class="icon">📝</div></div> -->
+          </article>
+
+
+          <!-- Company Licence -->
+          <article class="item">
+            <div class="card">
+              <h3>Company Licence</h3>
+              <div class="meta">
+              <span class="badge pill-info">Planned</span>
+              <span class="eta">Before Sep 30, 2025</span>
+              </div>
+              <p class="desc">Obtain company licence following Form C approval.</p>
+              <div class="numb">3</div>
+            </div>
+          <!-- <div class="node"><div class="icon">📄</div></div> -->
+          </article>
+
+
+          <!-- Bank Account -->
+          <article class="item">
+          <div class="card">
+            <h3>Open Company Bank Account</h3>
+            <div class="meta">
+            <span class="badge pill-info">Planned</span>
+            <span class="eta">Before Sep 30, 2025</span>
+            </div>
+            <p class="desc">Set up transactional accounts aligned with payment providers.</p>
+            <div class="numb">4</div>
+          </div>
+          <!-- <div class="node"><div class="icon">🏦</div></div> -->
+          </article>
+
+
+          <!-- ERS TIN -->
+          <article class="item">
+          <div class="card">
+            <h3>ERS Tax Identification Number (TIN)</h3>
+            <div class="meta">
+            <span class="badge pill-info">Planned</span>
+            <span class="eta">Before Sep 30, 2025</span>
+            <div class="numb">5</div>
+          </div>
+          <p class="desc">Register with the Eswatini Revenue Service for TIN issuance.</p>
+          </div>
+          <!-- <div class="node"><div class="icon">🧾</div></div> -->
+          </article>
+
+
+          <!-- SCCOM Compliance -->
+          <article class="item">
+            <div class="card">
+              <h3>SCCOM Data Security Compliance Certificate</h3>
+              <div class="meta">
+                <span class="badge pill-plan">Pending External</span>
+                <span class="eta">After docs submission (ETA Oct 2025)</span>
+              </div>
+            <p class="desc">Submit for review after all September documents are complete; awaiting certificate issuance.</p>
+            <div class="numb">6</div>
+            </div>
+          <!-- <div class="node"><div class="icon">🔒</div></div> -->
+          </article>
+
+
+          </section>
+
+
+          <div class="footer">
+          <div class="small"><strong></strong> </div>
+          <div>
+          <!-- <button class="btn" onclick="window.print()">Print / Save as PDF</button> -->
+          </div>
+          </div>
+          </div>
+  </div>
+
+  <script>
+    function showSlide(n) {
+      const slides = document.querySelectorAll('.slide');
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[n-1].classList.add('active');
+    }
+
+    const roles = [
+            { box: "founder", conn: null },
+            { box: "marketing-lead", conn: "conn1" },
+            { box: "marketing-officer", conn: "conn2" },
+            { box: "intern", conn: "conn3" },
+            { box: "technical", conn: "conn4" }
+            ];
+
+
+            let currentIndex = 0;
+            let started = false;
+
+
+            document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter" && !started) {
+              started = true;
+              revealSequence();
+              }
+            });
+
+
+            function revealSequence() {
+            if (currentIndex < roles.length) {
+              const role = roles[currentIndex];
+              if (role.conn) document.getElementById(role.conn).classList.add("show");
+              document.getElementById(role.box).classList.add("show");
+              currentIndex++;
+              setTimeout(revealSequence, 3000); // 3 seconds interval
+              }
+            }
+  </script>
+</body>
+</html>

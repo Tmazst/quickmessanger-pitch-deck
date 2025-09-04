@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Problems</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/styles.css" />
+  <link rel="icon" type="image/png" href="./static/images/qm_logo.png"/>
+  <style>
+      :root {
+      --primary-color:  #EF4036;
+      --secondary-color:  #1e9e69;
+      --bg-color: #f8faff;}
+      .problem-details i {
+        color: #575757;
+        /* margin-right: 10px; */
+      }
+      .problem-details strong {
+        color: var(--primary-color);
+      }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    /* Container for the boxes */
+    .problem-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 900px;
+    }
+
+    /* Each clickable problem box */
+    .problem-box {
+      background: #fff;
+      border: 2px solid var(--primary-color);
+      border-radius: 12px;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .problem-box:hover {
+      background: var(--primary-color);
+      color: #fff;
+      transform: translateY(-5px);
+    }
+
+    .problem-box i {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .problem-box span {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    /* Problem detail display */
+    .problem-details {
+      margin-top: 30px;
+      max-width: 600px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      border-top: 6px solid var(--primary-color);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: none;
+      text-align: left;
+      font-size: 30px;
+      font-weight: 700;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .problem-details.active {
+      display: block;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+<nav style="">
+    <h2> Quick Messanger</h2>
+    <ul>
+      <li><a href="#" onclick="showSlide(1)"><i class="fa-solid fa-house"></i> Intro</a></li>
+      <li><a href="#" onclick="showSlide(2)"><i class="fa-solid fa-people-group"></i> Future Team</a></li>
+      <li><a href="problem_statement.html" ><i class="fa-solid fa-triangle-exclamation"></i> Problem Statement</a></li>
+      <!-- <li><a href="#" onclick="showSlide(4)"><i class="fa-solid fa-triangle-exclamation"></i> Problem Statement 2</a></li> -->
+      <li><a href="solution.html" onclick="showSlide(5)"><i class="fa-solid fa-lightbulb"></i> Solution</a></li>
+      <li><a href="https://quickmessanger.com" ><i class="fa-solid fa-lightbulb"></i> The Product</a></li>
+      <li><a href="target_audience.html" ><i class="fa-solid fa-users-viewfinder"></i> Target Audience</a></li>
+      <li><a href="https://quickmessanger.com/pricing" ><i class="fa-solid fa-lightbulb"></i> Pricing</a></li>
+      <li><a href="#" onclick="showSlide(7)"><i class="fa-solid fa-rectangle-ad"></i> Smart Adverts</a></li>
+      <li><a href="growth_stages.html" ><i class="fa-solid fa-timeline"></i>Timeline</a></li>
+      <li><a href="income_projects.html" onclick="showSlide(8)"><i class="fa-solid fa-timeline"></i>User & Income Projections</a></li>
+    </ul>
+  </nav>
+  <h1>App Growth Projections</h1>
+
+  <div  style="width:70%;margin:0 auto" class="">
+
+    <img src="./static/images/growth_stages.jpg" alt="Growth Stages" style="width:100%;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,0.1)">
+  </div>
+
+  <!-- Problem description display -->
+  <div id="problem-details" class="problem-details"></div>
+
+</body>
+</html>
