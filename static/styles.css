@@ -176,12 +176,16 @@ nav:hover{
 
 
 .item{position:relative; display:grid; grid-template-columns:40px 1fr; gap:16px}
-@media (min-width:700px){
+@media (max-width:700px){
 .item{grid-template-columns:1fr 40px 1fr; align-items:stretch;}
 .item:nth-child(odd) .card{grid-column:1/2}
 .item:nth-child(odd) .node{grid-column:2/3}
 .item:nth-child(even) .card{grid-column:3/4}
 .item:nth-child(even) .node{grid-column:2/3}
+#slide-1 img{
+  height:250px !important;
+  width: 250px !important;
+}
 }
 
 
